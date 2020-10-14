@@ -3,7 +3,16 @@
  * HINT: Make sure to pass in the audioSrc as parameter to create a new audio track
  * HINT: Create a play function to play the audio if called 
  */
+
+
 class Beat {
+    constructor(audioSrc){
+        this.audio = new Audio(audioSrc);
+    }
+    play = () => {
+        this.audio.currentTime = 0;
+        this.audio.play();
+    }
 }
 
 
@@ -13,12 +22,17 @@ class Beat {
  */
 class Button {
     constructor(color, keyCode){
+        this.color = color;
+        this.keyCode = keyCode;
+        this.element = document.getElementById(keyCode);
+        console.log(this.element);
     }
 
     /**
      * Set the button color based on color specified
      */
     setButtonColorInHTML = () => {
+
     }
 
     /**
