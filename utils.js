@@ -27,7 +27,7 @@ class Button {
         this.element = document.getElementById(keyCode);
         console.log(this.element);
         this.setButtonColorInHTML();
-       
+        this.setATransitionEndListener();      
     }
 
     /**
@@ -49,5 +49,14 @@ class Button {
      * Deselect function to reset background color and boxShadow
      */
     deselect = () => {
+        this.element.style.background = 'transparent';
+        this.element.style.boxShadow = 'none';
+    }
+    setATransitionEndListener = () => {
+       this.element.addEventListener('transitionend', ()=>{
+       this.deselect();
+    })
+       
+
     }
 }
